@@ -3,12 +3,20 @@
 <html>
     <body>
         <p>Save all the words!</p>
+        <p>Select which set to save in:</p>
+        <select id="setSelect">
+            <option value="set1">Set 1</option>
+            <option value="set2">Set 2</option>
+            <option value="set3">Set 3</option>
+            <option value="set4">Set 4</option>
+            <option value="set5">Set 5</option>
+        </select>
         <input type="text" id="answer"/>
         <input type="text" id="question"/>
         <button id="test" type="button">Enter flashcard</button>
         <p id="demo"></p>
         <ul id="testList"></ul>
-        <button id="delete" type="button">Delete all elements!</button>
+        <button id="delete_all" type="button">Delete all elements!</button>
     </body>
     <script src="main.js"></script>
 </html>
