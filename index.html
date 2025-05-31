@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
     <body>
         <p>Save all the words!</p>
         <p>Select which set to save in:</p>
-        <select id="setSelect">
+        <select id="setSelect" autocomplete="off">
+            <option value="" selected disabled hidden>Choose a Set</option>
             <option value="set1">Set 1</option>
             <option value="set2">Set 2</option>
             <option value="set3">Set 3</option>
@@ -15,11 +19,13 @@
         <input type="text" id="question"/>
         <button id="submit" type="button" onclick="newFlashcard()">Enter flashcard</button>
         <p id="status"></p>
-        <ul id="set1_list" name="set_lists">Set 1</ul>
-        <ul id="set2_list" name="set_lists">Set 2</ul>
-        <ul id="set3_list" name="set_lists">Set 3</ul>
-        <ul id="set4_list" name="set_lists">Set 4</ul>
-        <ul id="set5_list" name="set_lists">Set 5</ul>
+        <ul id="set1_list" class="set_lists">Set 1</ul>
+        <ul id="set2_list" class="set_lists">Set 2</ul>
+        <ul id="set3_list" class="set_lists">Set 3</ul>
+        <ul id="set4_list" class="set_lists">Set 4</ul>
+        <ul id="set5_list" class="set_lists">Set 5</ul>
+        <button id="delete_set" type="button">Delete this Set</button>
         <button id="delete_all" type="button">Delete all elements!</button>
+        <a href="practice.html" class="button-class">Click Me</a>
     </body>
     <script src="main.js"></script>
