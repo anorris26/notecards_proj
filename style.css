@@ -1,0 +1,15 @@
+ul.set_lists {
+    display: none;
+}
+
+#practiceButton {
+    display: None;
+}
+
+#answerDisplay{
+    display: None;
+}
+
+.practice {
+    display: None;
+}

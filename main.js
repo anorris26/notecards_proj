@@ -1,5 +1,3 @@
-let inum = localStorage.length;
-
 window.onload = function() {
     document.getElementById("answer").value = "";
     document.getElementById("question").value = "";
@@ -125,5 +123,4 @@ function newFlashcard() {
     // Clear the input fields after adding the item
     document.getElementById("answer").value = "";
     document.getElementById("question").value = "";
-    inum += 1;
 }
