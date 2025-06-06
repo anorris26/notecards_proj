@@ -18,6 +18,9 @@ document.getElementById("delete_set").onclick = function() {
 
 document.getElementById("delete_all").onclick = function() {
     localStorage.clear();
+
+    document.getElementById("status").display = "block";
+
     document.getElementById("status").innerHTML = "Deleted all flashcards.";
     document.querySelectorAll(".set_lists").forEach(function(set) {
         // Clear the list items
@@ -47,6 +50,8 @@ document.getElementById("setSelect").addEventListener("change", function() {
         wordInd.removeChild(wordInd.firstChild);
     }
 
+    document.getElementById("setName").textContent = `${this.options[this.selectedIndex].textContent}`;
+
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (key.startsWith(`${chosenSet}_`)) {
@@ -54,7 +59,8 @@ document.getElementById("setSelect").addEventListener("change", function() {
             const answer = key.split("_")[1];
 
             const listItem = document.createElement("li");
-            listItem.textContent = `${answer}: ${question}`;
+            listItem.textContent = `${answer}:\n${question}`;
+            listItem.style.whiteSpace = "pre-wrap";
 
             const button = addDeleteButton(key, listItem, wordInd);
             listItem.append(button);
@@ -77,7 +83,10 @@ function addDeleteButton(key, listItem, wordInd) {
     const answer = key.split("_")[1];
     const set = key.split("_")[0];
     button.textContent = "Delete";
+    button.className = "deleteButton";
     button.onclick = function() {
+        document.getElementById("status").style.display = "block";
+
         document.getElementById("status").innerHTML = `Deleted "${answer}" from ${set}`;
         localStorage.removeItem(key);
         wordInd.removeChild(listItem);
@@ -87,10 +96,12 @@ function addDeleteButton(key, listItem, wordInd) {
 
 function newFlashcard() {
     let set = document.getElementById("setSelect").value;
+    const setNum = set[set.length - 1];
     let answer = document.getElementById("answer").value;
     let question = document.getElementById("question").value;
     let key = `${set}_${answer}`;
 
+    document.getElementById("status").style.display = "block";
 
     if (set === "") {
         document.getElementById("status").innerHTML = "Please select a set.";
@@ -111,9 +122,11 @@ function newFlashcard() {
     
     localStorage.setItem(key, question);
 
-    document.getElementById("status").innerHTML = `new element: ${answer} and ${question} in set ${set}`;
+    
+    document.getElementById("status").innerHTML = `new element: ${answer} and ${question} in set ${setNum}`;
     const listItem = document.createElement("li");
-    listItem.textContent = answer + ": " + question;
+    listItem.textContent = `${answer}:\n${question}`;
+    listItem.style.whiteSpace = "pre-wrap";
 
     const wordInd = document.getElementById(`${set}_list`);
     const button = addDeleteButton(key, listItem, wordInd);

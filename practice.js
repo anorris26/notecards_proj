@@ -1,8 +1,6 @@
 let questions = [];
 
 window.onload = function() {
-    localStorage.setItem("set1_apple", "A fruit that is red or green.");
-    localStorage.setItem("set1_banana", "A long yellow fruit.");
 }
 
 document.getElementById("setSelect").addEventListener("change", function() {
@@ -55,6 +53,7 @@ document.getElementById("submit").onclick = function() {
 
 document.getElementById("next").onclick = function() {
     document.getElementById("status").textContent = "";
+    document.getElementById("answer").value = "";
     displayRandomQuestion(questions);
 }
 
