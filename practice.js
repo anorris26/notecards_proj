@@ -71,7 +71,6 @@ document.getElementById("newSetButton").onclick = function() {
     document.getElementById("answerDisplay").textContent = "";
     document.getElementById("answer").value = "";
     document.getElementById("status").textContent = "";
-
     
     document.getElementById("practice").style.display = 'none';
     document.getElementById("hideable").style.display = 'block';

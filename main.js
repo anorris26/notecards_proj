@@ -19,7 +19,7 @@ document.getElementById("delete_set").onclick = function() {
 document.getElementById("delete_all").onclick = function() {
     localStorage.clear();
 
-    document.getElementById("status").display = "block";
+    document.getElementById("status").style.visibility = "visible";
 
     document.getElementById("status").innerHTML = "Deleted all flashcards.";
     document.querySelectorAll(".set_lists").forEach(function(set) {
@@ -101,7 +101,7 @@ function newFlashcard() {
     let question = document.getElementById("question").value;
     let key = `${set}_${answer}`;
 
-    document.getElementById("status").style.display = "block";
+    document.getElementById("status").style.visibility = "visible";
 
     if (set === "") {
         document.getElementById("status").innerHTML = "Please select a set.";
