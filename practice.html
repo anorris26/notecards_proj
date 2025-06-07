@@ -5,27 +5,40 @@
 </head>
 <body>
     <h1>Practice Flashcards</h1>
-    <p class="hideable">Select set to practice on:
-    <select id="setSelect" autocomplete="off">
-            <option value="" selected disabled hidden>Choose a Set</option>
-            <option value="set1">Set 1</option>
-            <option value="set2">Set 2</option>
-            <option value="set3">Set 3</option>
-            <option value="set4">Set 4</option>
-            <option value="set5">Set 5</option>
-    </select></p>
+    <div class="column" id="practiceCol">
+        <div id="hideable">
+            <h2>Select a set to practice on:</h2>
+            <select id="setSelect" autocomplete="off">
+                    <option value="" selected disabled hidden>Choose a Set</option>
+                    <option value="set1">Set 1</option>
+                    <option value="set2">Set 2</option>
+                    <option value="set3">Set 3</option>
+                    <option value="set4">Set 4</option>
+                    <option value="set5">Set 5</option>
+            </select>
 
-    <ul id="display" class="hideable"></ul>
-    <button id="practiceButton" class="hideable">Practice this set!</button>
-    <a href="index.html">Edit Flashcards</a>
+            <ul id="display"></ul>
+            <button id="practiceButton">Practice this set!</button>
+        </div>
 
-    <p id="answerDisplay"></p>
-    <p id="questionDisplay" class="practice"></p>
-    <textarea id="answer" class="practice" placeholder="Type your answer here"></textarea>
-    <button id="submit" type="button" class="practice">Submit Answer</button>
-    <button id="next" type="button" class="practice">Next Question</button>
-    <p id="status" class="practice"></p>
-    <button id="newSetButton" class="practice">Select a New Set</button>
+
+        <p id="answerDisplay"></p>
+
+        <div id="practice">
+            <p id="questionDisplay"></p>
+            <textarea id="answer" placeholder="Type your answer here"></textarea>
+            <div>
+                <button id="submit" type="button">Check Answer</button>
+                <button id="next" type="button">Next Question</button>
+                <p id="status"></p>
+            </div>
+            <button id="newSetButton">Select a New Set</button>
+        </div>
+    </div>
+
+    <div class="buttonRow">
+        <a href="index.html" id="link">Edit Flashcards</a>
+    </div>
 
 </body>
 </html>
